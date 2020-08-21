@@ -1,0 +1,107 @@
+"","TaxaGroupAtlas","PollutantType","freq"
+"1","Acari","Metals",39
+"2","Acari","Mixtures",5
+"3","Acari","Nanoparticles",1
+"4","Acari","Others",2
+"5","Acari","PAHs (hydrocarbons)",3
+"6","Acari","Pesticides",39
+"7","Acari","Pharmaceuticals",4
+"8","Acari","Radionuclides/Radiation",2
+"9","Ants","Metals",9
+"10","Ants","Mixtures",2
+"11","Ants","Others",1
+"12","Ants","Pesticides",12
+"13","Ants","Pharmaceuticals",1
+"14","Ants","Radionuclides/Radiation",1
+"15","Arachnida (spiders and scorpions)","Metals",18
+"16","Arachnida (spiders and scorpions)","Mixtures",5
+"17","Arachnida (spiders and scorpions)","Others",1
+"18","Arachnida (spiders and scorpions)","PAHs (hydrocarbons)",2
+"19","Arachnida (spiders and scorpions)","Pesticides",19
+"20","Arachnida (spiders and scorpions)","Pharmaceuticals",1
+"21","Arachnida (spiders and scorpions)","Radionuclides/Radiation",1
+"22","Coleoptera","Metals",21
+"23","Coleoptera","Mixtures",5
+"24","Coleoptera","Others",1
+"25","Coleoptera","PAHs (hydrocarbons)",2
+"26","Coleoptera","Pesticides",22
+"27","Coleoptera","Pharmaceuticals",1
+"28","Coleoptera","Radionuclides/Radiation",3
+"29","Collembola","Metals",33
+"30","Collembola","Mixtures",5
+"31","Collembola","Nanoparticles",1
+"32","Collembola","Others",2
+"33","Collembola","PAHs (hydrocarbons)",4
+"34","Collembola","Pesticides",35
+"35","Collembola","Pharmaceuticals",5
+"36","Collembola","Radionuclides/Radiation",2
+"37","Diplura","Metals",9
+"38","Diplura","Mixtures",2
+"39","Diplura","PAHs (hydrocarbons)",1
+"40","Diplura","Pesticides",5
+"41","Earthworms","Metals",39
+"42","Earthworms","Mixtures",5
+"43","Earthworms","PAHs (hydrocarbons)",4
+"44","Earthworms","Pesticides",27
+"45","Earthworms","Pharmaceuticals",4
+"46","Earthworms","Radionuclides/Radiation",2
+"47","Enchytraeids","Metals",21
+"48","Enchytraeids","Mixtures",4
+"49","Enchytraeids","Pesticides",8
+"50","Enchytraeids","Pharmaceuticals",3
+"51","Gastropoda (slugs and snails)","Metals",6
+"52","Gastropoda (slugs and snails)","Others",1
+"53","Gastropoda (slugs and snails)","PAHs (hydrocarbons)",2
+"54","Gastropoda (slugs and snails)","Pesticides",6
+"55","Gastropoda (slugs and snails)","Radionuclides/Radiation",1
+"56","Isopoda","Metals",17
+"57","Isopoda","Mixtures",4
+"58","Isopoda","Others",1
+"59","Isopoda","PAHs (hydrocarbons)",1
+"60","Isopoda","Pesticides",9
+"61","Larvae","Metals",19
+"62","Larvae","Mixtures",3
+"63","Larvae","Others",1
+"64","Larvae","PAHs (hydrocarbons)",1
+"65","Larvae","Pesticides",10
+"66","Larvae","Pharmaceuticals",1
+"67","Larvae","Radionuclides/Radiation",1
+"68","Macroarthropods","Pesticides",2
+"69","Mesofauna","Pesticides",1
+"70","Myriapoda","Metals",18
+"71","Myriapoda","Mixtures",5
+"72","Myriapoda","Others",1
+"73","Myriapoda","PAHs (hydrocarbons)",1
+"74","Myriapoda","Pesticides",17
+"75","Myriapoda","Pharmaceuticals",1
+"76","Myriapoda","Radionuclides/Radiation",3
+"77","Nematodes","Metals",60
+"78","Nematodes","Mixtures",8
+"79","Nematodes","Nanoparticles",1
+"80","Nematodes","Others",1
+"81","Nematodes","PAHs (hydrocarbons)",4
+"82","Nematodes","Pesticides",36
+"83","Nematodes","Pharmaceuticals",8
+"84","Nematodes","Radionuclides/Radiation",1
+"85","Others","Metals",15
+"86","Others","Mixtures",4
+"87","Others","Others",2
+"88","Others","PAHs (hydrocarbons)",2
+"89","Others","Pesticides",15
+"90","Protists","Metals",3
+"91","Protists","Mixtures",1
+"92","Protists","Pesticides",2
+"93","Protists","Pharmaceuticals",1
+"94","Protura","Metals",6
+"95","Protura","Mixtures",1
+"96","Protura","PAHs (hydrocarbons)",1
+"97","Protura","Pesticides",5
+"98","Pseudoscorpions","Metals",6
+"99","Pseudoscorpions","Mixtures",2
+"100","Pseudoscorpions","PAHs (hydrocarbons)",1
+"101","Pseudoscorpions","Pesticides",3
+"102","Rotifers","Metals",2
+"103","Tardigrades","Metals",2
+"104","Tardigrades","Pesticides",2
+"105","Termites","Metals",1
+"106","Termites","Pesticides",4
