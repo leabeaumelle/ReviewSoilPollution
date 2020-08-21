@@ -1,0 +1,11 @@
+Code for: Soil biodiversity and chemical stressors: global review and roadmap for future research
+
+DOI : XXX
+
+We use a comprehensive literature review of 274 studies to evaluate the current state of knowledge about the effects of chemicals on soil fauna communities. We identify the current knowledge gaps regarding soil community and ecosystem responses to stressors that restrict a general understanding of the ecological consequences of exposure to chemicals in soil. Based on the present assessment of the existing literature, we present critical recommendations for future research avenues and experiments, which are especially relevant to scale up the response of soil communities to consequences for soil ecosystem functions and ultimately ecosystem services.
+
+We conducted a systematic literature search as part of a global meta-analysis focusing on the impacts of various global change drivers on soil fauna (Phillips, Beaumelle, et al., 2019) on October 15th 2018. From that systematic search, we identified 274 studies that looked at the influence of various chemical stressors. 
+
+The scripts and data provided in this repository allow to reproduce the analyses and figures presented in the paper. 
+
+
