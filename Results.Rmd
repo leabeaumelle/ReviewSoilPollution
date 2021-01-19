@@ -12,7 +12,6 @@ Figures are created from the script "FIGURES.R".
 ## Data
 ```{r loaddat}
 library(dplyr)
-# load packages for maps
 library(maptools)
 library(ggmap)
 library(rnaturalearth)
@@ -210,6 +209,8 @@ ggplot(output, aes(x = Taxagroup2, y = no.studies))+
 kable(output[,1:2])
 
 ```
+
+
 
 ### How many studies addressing macrofauna?
 
@@ -463,7 +464,7 @@ ggplot(output, aes(x = System2, y = no.studies))+
 
 
 
-### Citations of papers that addressed bioindicators
+### Bioindicators studies
 
 ```{r}
 
@@ -492,6 +493,14 @@ BioIndicStudiesTitle
 
 
 ## Supplement Tables
+
+### Supplement Table: full list of references
+
+```{r}
+
+write.csv(metadatreview[,c("authors", "title", "Published.Year", "journal", "DOI", "abstract")], "Output/FullListRefs.csv")
+```
+
 
 ### Supplement Table: all papers with multitrophic-diversity
 
@@ -535,3 +544,52 @@ MultiGCDdata <- metadatreview[metadatreview$Multidrivers != "no",WhichVars]
 
 write.csv(MultiGCDdata, "Output/TablePapersWithMultiGCDs.csv")
 ```
+
+# Response to Referees
+
+## R2 C5
+```{r}
+# Sousa's group
+(metadatreview[grepl("Sousa", metadatreview$authors),])
+(metadatreview[grepl("Chelinho", metadatreview$authors),])
+(metadatreview[grepl("Rombke", metadatreview$authors),])
+
+metadatreview[grepl("Faber", metadatreview$authors),]
+metadatreview[grepl("Filser", metadatreview$authors),]
+metadatreview[grepl("Gestel", metadatreview$authors),]
+metadatreview[grepl("Reineck", metadatreview$authors),]
+metadatreview[grepl("Amorim", metadatreview$authors),]
+
+metadatreview[grepl("Spurgeon", metadatreview$authors),]
+metadatreview[grepl("Hopkin", metadatreview$authors),]
+
+nrow(metadatreview[grepl("Koolhaas", metadatreview$authors),])
+nrow(metadatreview[grepl("Holmstrup", metadatreview$authors),])
+
+nrow(metadatreview[grepl("Posthuma", metadatreview$authors),])
+nrow(metadatreview[grepl("Hedde", metadatreview$authors),])
+
+nrow(metadatreview[grepl("Hobbelen", metadatreview$authors),])
+nrow(metadatreview[grepl("Nahmani", metadatreview$authors),])
+
+(metadatreview[grepl("Lavelle", metadatreview$authors),])
+
+(metadatreview[grepl("Decaens", metadatreview$authors),])
+
+(metadatreview[grepl("Pelosi", metadatreview$authors),])
+```
+
+# R2 C6
+
+```{r}
+tbl <- table(metadatreview$journal)
+tbl[order(-tbl)]
+
+```
+
+
+```{r}
+(metadatreview[grepl("radiation", ignore.case = TRUE, metadatreview$PollutantType),])
+```
+
+

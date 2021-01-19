@@ -49,20 +49,28 @@ wm <- ne_countries(scale = 110, returnclass = "sf") %>%
 
 wm <- sf::st_transform(wm,"+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
 
+mybreaks <- c(5, 10, 15, 20, 25)
+
 map <- ggplot(wm)+
   geom_sf(aes(fill = (no.stud)))+
-  scale_fill_viridis(option = "viridis", na.value = "gray", name = "No. studies")+
+  scale_fill_viridis(option = "viridis", 
+                     begin = 0,
+                     end = 1,
+                     na.value = "gray", breaks = mybreaks,
+                     name = "Number of\nstudies")+
   theme_bw()+
   theme(legend.position = c(0,0),
+        # legend.position = "left",
         legend.justification = c(-0.2, -0.1),
-        legend.title = element_text(size=20),
-        legend.text = element_text(size=20))
+        legend.title = element_text(size=15),
+        legend.text = element_text(size=14))
 
+map
 
 # save fig high resolution--------------------------------------------------
 
 # save a png with high res
-ppi <- 600# final: 600 # resolution
+ppi <- 300# final: 600 # resolution
 w <- 20 # width in cm
 
 png("figs/Fig2A_map.png",
@@ -112,7 +120,7 @@ Fig2B <- ggplot(
   geom_line(size = 1.5)+ #
   scale_color_manual(values = cbPalette)+
   scale_x_continuous(name = "Publication year")+
-  scale_y_continuous(name = "No. studies")+
+  scale_y_continuous(name = "Number of studies")+
   
   # theme stuff
   theme_bw() +
@@ -129,14 +137,14 @@ Fig2B <- ggplot(
     legend.spacing.x = unit(0.25, 'cm'),
     
   )
-# Fig2B
+Fig2B
 
 
 
 # save fig high resolution--------------------------------------------------
 
 # save a png with high res
-ppi <- 600# final: 600 # resolution
+ppi <- 300# final: 600 # resolution
 w <- 20 # width in cm
 
 png("figs/Fig2B_Pollutants.png",
@@ -182,6 +190,10 @@ metadatreview <- metadatreview %>%
                                            as.character(OtherBiodiversity))))
 
 ## Panel 1 - Multiple Biodiversity=====================================
+metadatreview <- metadatreview %>% 
+  mutate(OtherBiodiversity = factor(ifelse(OtherBiodiversity=="lichens", "plants", # lichens in the plant category for simplification
+                                           as.character(OtherBiodiversity))))
+
 # Calculate the percentage of each group
 metadatreviewsummary <- metadatreview %>%
   group_by(OtherBiodiversity) %>%
@@ -217,8 +229,6 @@ colMB1 <- c("#424b54", "#cc444b", "#aa4465", "#f5cac3", "#da5552",
 colMB <- c( "#424b54", "#cce8cc","#aa4465", "#b38d97","#ecc8ae",
             "#F68D92") # color from venn diagram
 
-
-
 PlotMultiB <- ggplot(data = metadatreviewsummary, aes(x = 1, y = Percent, fill = MultiDiversity))+
   geom_bar(stat = "identity")+
   # scale_fill_viridis(discrete = TRUE, name="Multiple Biodiversity") +
@@ -236,7 +246,7 @@ PlotMultiB <- ggplot(data = metadatreviewsummary, aes(x = 1, y = Percent, fill =
         legend.position = "right",
         legend.spacing.x = unit(0.5, 'cm'))
 
-# PlotMultiB
+PlotMultiB
 
 ## Panel 2 - Multiple Functions =====================================
 # Calculate the percentage of each group
@@ -351,7 +361,7 @@ WhichTopic <- c("Multi-diversity", "Multidiversity + EF", "Multi-diversity + Mul
                 "Multiple drivers",
                 "3 topics")
 
-No.studies <- c("Multi-diversity" = nrow(metadatreview[metadatreview$OtherBiodiversity == "plants,microbes",]),
+No.studies <- c("Multi-diversity (=plant-soil)" = nrow(metadatreview[metadatreview$OtherBiodiversity == "plants,microbes",]),
                 "Multi-diversity + EF"= nrow(metadatreview[metadatreview$OtherBiodiversity == "plants,microbes" &
                                                              metadatreview$EcosystemFunction != "none",]),
                 "Multi-diversity + Multi Drivers" = nrow(metadatreview[metadatreview$OtherBiodiversity == "plants,microbes" &
@@ -362,9 +372,16 @@ No.studies <- c("Multi-diversity" = nrow(metadatreview[metadatreview$OtherBiodiv
                 "Multiple drivers" = nrow(metadatreview[metadatreview$Multidrivers != "no",]),
                 "Three topics" = nrow(metadatreview[metadatreview$Multidrivers != "no" &
                                                       metadatreview$OtherBiodiversity == "plants,microbes" &
-                                                      metadatreview$EcosystemFunction != "none",])
+                                                      metadatreview$EcosystemFunction != "none",]),
+                "Three tropics if true multidiv" = nrow(metadatreview[metadatreview$Multidrivers != "no" &
+                                                                        metadatreview$OtherBiodiversity != "no" &
+                                                                        metadatreview$EcosystemFunction != "none",])
+                
 )
 
+CitationsMultiStudies <- metadatreview[metadatreview$Multidrivers != "no" &
+                                              metadatreview$OtherBiodiversity == "plants,microbes" &
+                                              metadatreview$EcosystemFunction != "none",]
 
 # MultiD studies
 muliDivstudies <- metadatreview[metadatreview$OtherBiodiversity != "no",]
