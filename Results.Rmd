@@ -1,16 +1,18 @@
 ---
 title: "R Notebook"
-output: html_notebook
-editor_options: 
+output:
+  html_document:
+    df_print: paged
+editor_options:
   chunk_output_type: inline
 ---
 
-Results presented in "Soil biodiversity and chemical stressors: global review and roadmap for future research". 
+Results presented in "Soil fauna diversity and chemical stressors: a review of knowledge gaps and roadmap for future research". 
 
 Figures are created from the script "FIGURES.R".
 
 ## Data
-```{r loaddat}
+```{r, include=FALSE}
 library(dplyr)
 library(maptools)
 library(ggmap)
@@ -504,7 +506,7 @@ write.csv(metadatreview[,c("authors", "title", "Published.Year", "journal", "DOI
 
 ### Supplement Table: all papers with multitrophic-diversity
 
-The list of papers focusing on plants, microbes and soil fauna was used to investigate whether the studies addressed indirect effects of chemical stressors, and if they considered foodweb or network approaches. 
+The list of papers focusing on plants, microbes and soil fauna was used to investigate whether the studies addressed indirect effects of chemical stressors, and if they considered foodweb and/or network approaches. 
 
 ```{r}
 # create a table with all studies that have at least one EF
